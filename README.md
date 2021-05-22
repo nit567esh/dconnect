@@ -1,10 +1,10 @@
 # **dconnect** 
 #### Power your data connections with python and query with dconnect
 #
-**dconnect** is a data source connector for all available data sources within BOLD, User can also perfom SQL queries and will get data into pandas.
-##### Available datasources campactibility:
+**dconnect** is a lightweight data source connector wrapper for different databases, User can also perfom queries and will get data.
+#### Available datasources campactibility:
 *sqlLite, MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica, MongoDB, AWS S3 Bucket, GoogleSheets, Elasticsearch, Google Analytics, Neo4j*
-### Installation
+#### Installation
 **connection** requires below packages **dependencies**:
 *pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
 ##### Installation Commands
