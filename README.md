@@ -4,10 +4,10 @@
 **dconnect** is a lightweight data source connector wrapper for different databases, User can also perfom queries and will get data.
 #### Available datasources campactibility:
 *sqlLite, MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica, MongoDB, AWS S3 Bucket, GoogleSheets, Elasticsearch, Google Analytics, Neo4j*
-#### Installation
+### Installation
 **connection** requires below packages **dependencies**:
 *pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
-##### Installation from Git
+#### Installation from Git
 Clone from Bitbucket **package** repository using below command
 ```sh
 git clone https://github.com/nit567esh/dconnect.git
@@ -18,7 +18,7 @@ Go to python package folder and use below command to install the package into li
 $ cd <pkg_directory>
 $ python3 setup.py install
 ```
-##### Installation from Pypi
+#### Installation from Pypi
 Install directly from Pypi using below command
 ```sh
 pip install dconnect 
