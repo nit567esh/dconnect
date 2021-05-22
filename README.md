@@ -5,8 +5,6 @@
 #### Available datasources campactibility:
 *sqlLite, MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica, MongoDB, AWS S3 Bucket, GoogleSheets, Elasticsearch, Google Analytics, Neo4j*
 ### Installation
-**connection** requires below packages **dependencies**:
-*pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
 #### Installation from Git
 Clone repository using below command
 ```sh
