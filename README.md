@@ -1,4 +1,4 @@
-# connection - Power your data connections with python and queries with dconnect
+# **dconnect** - Power your data connections with python and queries with dconnect
 ##### Python package for 
   - Connecting multiple data sources and 
   - Running queries.
