@@ -8,7 +8,7 @@
 **connection** requires below packages **dependencies**:
 *pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
 #### Installation from Git
-Clone from Bitbucket **package** repository using below command
+Clone repository using below command
 ```sh
 git clone https://github.com/nit567esh/dconnect.git
 ```
