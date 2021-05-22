@@ -7,7 +7,7 @@
 #### Installation
 **connection** requires below packages **dependencies**:
 *pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
-##### Installation Commands
+##### Installation from Git
 Clone from Bitbucket **package** repository using below command
 ```sh
 git clone https://github.com/nit567esh/dconnect.git
@@ -17,6 +17,13 @@ Go to python package folder and use below command to install the package into li
 ```sh
 $ cd <pkg_directory>
 $ python3 setup.py install
+```
+##### Installation from Pypi
+Install directly from Pypi using below command
+```sh
+pip install dconnect 
+or
+python3 -m pip install dconnect
 ```
 ### Usages
 **Functions:**
