@@ -41,7 +41,7 @@ python3 -m pip install dconnect
 #### Examples:
 **1. For Relational DBs/DWs**
 ```sh
->>> con = c.connect('redshift_redshiftprod.bold.com_supplydemand')
+>>> con = c.connect('redshift_<host>_<database>')
 >>> df = c.runsql(con,'select top 10 * from edw.dim_portal')
 ```
 **Note** - Same is applicalble for the following list of DBs: *MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift* 
