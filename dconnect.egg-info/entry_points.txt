@@ -1,0 +1,3 @@
+[console_scripts]
+dconnect = dconnect.dconnect:main
+

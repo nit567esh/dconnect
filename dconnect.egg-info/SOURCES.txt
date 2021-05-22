@@ -1,0 +1,10 @@
+README.md
+setup.py
+dconnect/__init__.py
+dconnect/dconnect.py
+dconnect.egg-info/PKG-INFO
+dconnect.egg-info/SOURCES.txt
+dconnect.egg-info/dependency_links.txt
+dconnect.egg-info/entry_points.txt
+dconnect.egg-info/not-zip-safe
+dconnect.egg-info/top_level.txt
