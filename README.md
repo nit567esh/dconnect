@@ -1,8 +1,5 @@
-# **dconnect** - Power your data connections with python and queries with dconnect
-##### Python package for 
-  - Connecting multiple data sources and 
-  - Running queries.
-###### Author: Nitesh Kumar
+# **dconnect** 
+####Power your data connections with python and queries with dconnect
 #
 **connection** is a data source connector for all available data sources within BOLD, User can also perfom SQL queries and will get data into pandas.
 ##### Available datasources campactibility:
