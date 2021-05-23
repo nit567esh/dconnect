@@ -1,27 +1,22 @@
 Metadata-Version: 2.1
 Name: dconnect
-Version: unknown
+Version: 0.0.2
 Summary: Power your data connections with python and queries with dconnect
 Home-page: https://github.com/nit567esh/dconnect
 Author: Nitesh Kumar
 Author-email: nit567esh@gmail.com
-License: License :: OSI Approved :: MIT License
-Description: # connection 
-        ##### Python package for 
-          - Connecting multiple data sources and 
-          - To get SQL queries ouput into pandas DF.
-        ###### Powered by: BOLD
+License: UNKNOWN
+Description: # **dconnect** 
+        #### Power your data connections with python and query with dconnect
         #
-        **connection** is a data source connector for all available data sources within BOLD, User can also perfom SQL queries and will get data into pandas.
-        ##### Available datasources campactibility:
-        *MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift, MongoDB, AWS S3 Bucket, GoogleSheets, SFTP, Elasticsearch, Google Analytics, Neo4j, SearchMetrics REST API, PageSpeed Insight REST API, Iterable REST API*
+        **dconnect** is a lightweight data source connector wrapper for different databases, User can also perfom queries and will get data.
+        #### Available datasources campactibility:
+        *SQLite, MySQL, SQL Server, Azure SQL, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica, MongoDB, AWS S3 Bucket, GoogleSheets, Elasticsearch, Google Analytics, Neo4j*
         ### Installation
-        **connection** requires below packages **dependencies**:
-        *pandas, psycopg2, pyodbc, pymysql, pymongo, pygsheets, boto3, pysftp, elasticsearch, certifi, google2pandas, neo4j*
-        ##### Installation Commands
-        Clone from Bitbucket **package** repository using below command
+        #### Installation from Git
+        Clone repository using below command
         ```sh
-        git clone https://supportetl@bitbucket.org/livecareer/package.git
+        git clone https://github.com/nit567esh/dconnect.git
         ```
         Go to python package folder and use below command to install the package into library location:
         
@@ -29,119 +24,72 @@ Description: # connection
         $ cd <pkg_directory>
         $ python3 setup.py install
         ```
+        #### Installation from Pypi
+        Install directly from Pypi using below command
+        ```sh
+        pip install dconnect 
+        or
+        python3 -m pip install dconnect
+        ```
         ### Usages
+        In order to use the dcoonect, use below steps
+        1. Download [credentails.json](https://github.com/nit567esh/dconnect/blob/master/credentails.json) file.
+        2. Configure the required connection using the credentails.json template.
+        3. Store it somewhere in safe folder.
+        4. Use below commands to run you dconnect
+        ```sh
+        >>> import dconnect as c
+        >>> conids = c.conids('path_of_your_saved_credentails.json')
+        >>> print(conids) # Choose any connection id from list to validate the connection
+        >>> con = c.connect('your_connection_id(dsidentifier key in credentails.json)')
+        >>> df  = c.runsql(con, 'show tables;')
+        ```
         **Functions:**
-        *1. See available connection IDs*
+        1. List configured connection IDs
         ```sh
-        >>> import connection as c
-        >>> c.conids()
+        >>> import dconnect as c
+        >>> conids = c.conids('path_of_your_saved_credentails.json')
+        >>> print(conids)
         ```
-        *2. Connect using a conid*
+        2. Connect using a conid
         ```sh
-        >>> con = c.connect('<conid-string>')
+        >>> con = c.connect('<your_connection_id>')
         ```
-        *2. Run SQL quries incase on Relational DBs/DWs connection object & get data into pandas*
+        2. You can only run SQL queries incase on Relational DBs/DWs connection object.
         ```sh
         >>> df = c.runsql(con,'<Sql-Query>')
         ```
         #### Examples:
         **1. For Relational DBs/DWs**
         ```sh
-        >>> con = c.connect('redshift_redshiftprod.bold.com_supplydemand')
-        >>> df = c.runsql(con,'select top 10 * from edw.dim_portal')
+        >>> con = c.connect('redshift_<host>_<database>')
+        >>> df = c.runsql(con,'select top 10 * from edw.dim_product')
         ```
-        **Note** - Same is applicalble for the following list of DBs: *MySQL, SQL Server, Azure SQL DB, PostgreSQL, Redshift* 
+        **Note** - Same is applicalble for the following list of DBs: *SQLite, MySQL, SQL Server, Azure SQL, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica* 
         
-        **2. For MongoDB**
-        ```sh
-        >>> mongo = c.connect('mongodb_sisense1234@sisense.bold.com_sisensemetadatadb')
-        >>> mongo.list_database_names()
-        >>> con.documents.list_collection_names()
-        >>> cursor = con.documents.documentprod
-        >>> for document in cursor.find().limit(50):
-            print (document)
-        ```
-        **Note** - It's just for connecting to MongoDB server after that use **pymongo** libraray guidelines to perform queries on MognoDB instance.
+        **2. For Others**
+        Function **runsql** is only applicable to relational DBs/DWs. For other data source dconnect only allow to connect with data source and for query purpose you can ues the respective generic packages using the connection object initilized by dconnect.
         
-        **3. AWS S3 Bucket**
+        *Google Sheet Example*
         ```sh
-        >>> s3 = c.connect('awss3')
-        >>> s3.list_buckets()
+        >>> con = c.connect('gsheet_<username>@gamil.com') # using dconnect
+        >>> sh = con.open("<GsheetName>") # using pysgsheets
+        >>> wks = sh.worksheet_by_title("<GsheetTab>")  # using pysgsheets
+        >>> df = wks.get_as_df()  # using pysgsheets
         ```
-        **Note** - It's just for connecting to AWS S3 buckets after that use **boto3** libraray guidelines to perform S3 operations.
         
-        **4. Google Sheets**
-        ```sh
-        >>> con = c.connect('gsheet_support.etl@bold.com')
-        >>> sh = con.open("<GsheetWorksheetName>")
-        >>> wks = sh.worksheet_by_title("<GsheeetTitle>")
-        >>> df = wks.get_as_df()
-        ```
-        **Note** - 
-        * It's just for connecting to Gsheet using **OAuth** credentials after that use **pygsheets** libraray guidelines to perform Gsheets operations.
-        * We are using **support.etl@bold.com** email for OAuth authentication, So before using any googlesheets operation sheet should be share with the same email id.
-        * For the fisrt time when user authenticate with GSheets, Please follow the authentication instruction provided on **pygheets** tutorials page.
+        | DataSource|Pythob Pkg|GitRepo|Pypi|Dependencies|
+        |:---------:|:--------:|:-----:|:--:|:------:|
+        |Google Sheet|pygsheets| https://github.com/nithinmurali/pygsheets  | https://pygsheets.readthedocs.io/en/stable/ |client_secret json file|
+        |Google Analytics|google2pandas| https://github.com/panalysis/Google2Pandas  | https://pypi.org/project/Google2Pandas/ |client_secret json file, token file|
+        |GoogleAds|googleads| https://github.com/googleads/googleads-python-lib  | https://pypi.org/project/googleads/ |client_secret json file|
+        |AWS S3|boto3| https://github.com/boto/boto3  | https://pypi.org/project/boto3/ ||
+        |Mongo DB|pymongo| https://github.com/mher/pymongo  | https://pypi.org/project/pymongo/ ||
+        |Elasticsearch|elasticsearch| https://github.com/elastic/elasticsearch  | https://pypi.org/project/elasticsearch/ ||
+        |Neo4j|neo4j| https://github.com/neo4j  | https://pypi.org/project/neo4j/ ||
         
-        **5. Google Analytics**
-        ```sh
-        >>> con = c.connect('googleanalytics_support.etl@bold.com')
-        >>> query = {\
-            'ids' : '54885271',
-            'metrics' : 'pageviews',
-            'dimensions' : ['date', 'pagePath'],
-            'start_date' : '8daysAgo',
-            'max_results' : 10
-            }
-        >>> df, metadata = ga.execute_query(**query)
-        >>> print(df)
-        ```
-        **Note** - 
-        * It's just for connecting to Google Analytics using **OAuth** credentials after that use **google2pandas** libraray guidelines to perform GA queries.
-        * We are using **support.etl@bold.com** email for OAuth authentication, So before using any GA account that should be share with the same email id.
-        * For the first time when user authenticate with GSheets, Please follow the authentication instruction provided on **google2pandas** tutorials page.
-        
-        **6. SFTP**
-        ```sh
-        >>> sftp = c.connect('sftp_boldanalyticsserver')
-        >>> sftp.listdir('<sftpfolder>')
-        ```
-        **Note** - It's just for connecting to SFTP location after that use **pysftp** libraray guidelines to perform SFTP operations.
-        
-        **7. Elasticsearch**
-        ```sh
-        >>> es = c.connect('<esconid>')
-        ```
-        **Note** - It's just for connecting to elasticsearch after that use **elasticsearch** libraray guidelines to perform ES queries.
-        
-        **8. Neo4j Graph DB**
-        ```sh
-        >>> es = c.connect('<neo4jconid>')
-        ```
-        **Note** - It's just for connecting to Neo4J DB after that use **neo4j** libraray guidelines to perform queries.
-        
-        **9. Search Metric Rest Api**
-        ```sh
-        >>> access_token = c.connect('restapisearchmetric_access_token')
-        ```
-        **Note** - It's just for getting access token form Resp API after that use **request/urllib** librarary guidelines to perform GET/POST/PUT/DELETE/PATCH operations.
-        
-        **10. Page Speed Insights Rest Api**
-        ```sh
-        >>> psi = c.connect('<conid>')
-        ```
-        **Note** - Incase of Page Spped Rest Api **api_key** is used to perform GET/POST/PUT/DELETE/PATCH requets. Once you will execute above command api_key will be stored in **psi** varible. A user can use this api key further. Use **request/urllib** libraray guidelines to perform api requests.
-        
-        **11. Iterable Rest Api**
-        ```sh
-        >>> it = c.connect('<conid>')
-        ```
-        **Note** - Incase of Page Iterable Rest Api **api_key** is used to perform GET/POST/PUT/DELETE/PATCH requets. Once you will execute above command api_key will be stored in **it** varible. A user can use this api key further. Use **request/urllib** libraray guidelines to perform api requests.
         ### Todos
-         - Google Adwords, Mixpanel, Sisense integrations and many more
+         - REST API, FTP, SFTP, Google Adsense/Manager/Search Console, Mixpanel, Hive, HDFC, Apache Kylin, Apache Druid and many more
+        
 Platform: UNKNOWN
-Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 3
-Classifier: Operating System :: OS Independent
-Classifier: Private :: Do Not Upload
-Requires-Python: >=3.6
 Description-Content-Type: text/markdown

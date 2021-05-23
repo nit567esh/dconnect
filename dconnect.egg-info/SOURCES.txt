@@ -1,10 +1,14 @@
+LICENSE.txt
 README.md
+credentails.json
 setup.py
 dconnect/__init__.py
 dconnect/dconnect.py
 dconnect.egg-info/PKG-INFO
 dconnect.egg-info/SOURCES.txt
 dconnect.egg-info/dependency_links.txt
-dconnect.egg-info/entry_points.txt
-dconnect.egg-info/not-zip-safe
+dconnect.egg-info/requires.txt
 dconnect.egg-info/top_level.txt
+dconnect/__pycache__/__init__.cpython-37.pyc
+dconnect/__pycache__/dconnect.cpython-37.pyc
+dist/dconnect-unknown-py3.7.egg
