@@ -1,0 +1,152 @@
+{
+	"mysql": [{
+			"host": "localhost",
+			"db": "sample",
+			"port": "3306",
+			"user": "admin",
+			"pswd": "test##123",
+			"dsidentifier": "mysql_localhost_sample"
+		},
+		{
+			"host": "prod.domain.com",
+			"db": "tutorial",
+			"port": "3306",
+			"user": "test",
+			"pswd": "testing@123",
+			"dsidentifier": "mysql_prod.domain.com_tutorial"
+		}
+	],
+	"sqlserver": [{
+		"host": "localhost",
+		"db": "traffic",
+		"port": "1433",
+		"user": "admin",
+		"pswd": "tr@1234",
+		"dsidentifier": "sqlserver_localhost_traffic",
+		"driver": "{odbc driver 17 for sql server}"
+	}],
+	"azuresql": [{
+			"host": "prod.database.windows.net",
+			"db": "demo",
+			"port": "1433",
+			"user": "extract",
+			"pswd": "testr",
+			"dsidentifier": "azuresql_prod.database.windows.net_demo",
+			"driver": "{odbc driver 17 for sql server}"
+		},
+		{
+			"host": "test.database.windows.net",
+			"db": "test",
+			"port": "1433",
+			"user": "test",
+			"pswd": "test",
+			"dsidentifier": "azuresql_test.database.windows.net.test",
+			"driver": "{odbc driver 17 for sql server}"
+		}
+	],
+	"redshift": [{
+		"host": "redshift.domain.com",
+		"db": "demand",
+		"port": "5439",
+		"user": "etl",
+		"pswd": "etl",
+		"dsidentifier": "redshift_redshift.domain.com_demand"
+	}],
+	"clickhouse": [{
+		"host": "clickhouse.domain.com",
+		"db": "demand",
+		"port": "8123",
+		"user": "etl",
+		"pswd": "etl",
+		"dsidentifier": "redshift_redshift.domain.com_demand"
+	}],
+	"snowflake": [{
+		"account": "br4546dh.ca-central-1.aws",
+		"warehouse": "etl_dw",
+		"port": "443",
+		"database": "dw_dev",
+		"user": "test",
+		"password": "etl123",
+		"dsidentifier": "snowflake_br4546dh.ca-central-1.aws_dw_dev"
+	}],
+	"postgresql": [{
+		"host": "localhost",
+		"db": "test",
+		"port": "5439",
+		"user": "test",
+		"pswd": "test123",
+		"dsidentifier": "postgresql_localhost_test"
+	}],
+	"mongodb": [{
+		"host": "si1234@localhost",
+		"authdb": "admin",
+		"port": "27018",
+		"user": "write",
+		"pswd": "si1234",
+		"url": "mongodb://write:si1234@localhost:27018/?authsource=admin",
+		"dsidentifier": "mongodb_sisense1234@sisense.bold.com_sisensemetadatadb"
+	}],
+	"awss3": [{
+		"access_key": "dhebajebdhdgs34tteted",
+		"secret_access_key": "9eteddjjd/152shskd353dhdk36464dhdhdh",
+		"dsidentifier": "awss3"
+	}],
+	"gsheet": [{
+		"path": "c:/users/nitesh.kumar1/desktop",
+		"client_secret_file": "client_secret.json",
+		"dsidentifier": "gsheet_username@gmail.com"
+	}],
+	"googleanalytics": [{
+		"path": "c:/users/nitesh.kumar1/desktop",
+		"client_secret_file": "client_secret.json",
+		"token_file": "token.bat",
+		"dsidentifier": "googleanalytics_username@gmail.com"
+	}],
+	"googleadwords": [{
+		"path": "c:/users/nitesh.kumar1/desktop",
+		"client_secret_file": "googleads.yaml",
+		"dsidentifier": "googleadwords_username@gmail.com"
+	}],
+	"elasticsearch": [{
+		"host": "http://test.canadacentral.app.azure.com",
+		"port": "9200",
+		"user": "elasticuser",
+		"pswd": "elastic@1234",
+		"security": "http",
+		"ca_certs": "na",
+		"dsidentifier": "elasticsearch_test.canadacentral.app.azure.com"
+	}],
+	"neo4j": [{
+		"uri": "bolt://localhost:7687",
+		"user": "nitesh",
+		"pswd": "nitesh",
+		"dsidentifier": "neo4j_nitesh"
+	}],
+	"presto": [{
+		"host": "localhost",
+		"port": "8080",
+		"user": "user",
+		"catlog": "catl",
+		"http_scheme": "http",
+		"principal_id": "xyz",
+		"pswd": "1234@",
+		"dsidentifier": "presto_localhost_catl"
+	}],
+	"oracle": [{
+		"host": "localhost",
+		"port": "8080",
+		"service_name": "test",
+		"user": "nitesh",
+		"pswd": "hello",
+		"dsidentifier": "oracle_localhost_test"
+	}],
+	"ibm_db": [{
+		"host": "localhost",
+		"db": "test",
+		"port": "5439",
+		"protocol": "tcp",
+		"user": "etl",
+		"pswd": "hee",
+		"dsidentifier": "ibm_db_localhost_test"
+	}]
+}

@@ -30,7 +30,7 @@ def connect(conid=None):
 #    
     elif conid.split('_')[0].lower() in ('snowflake'):
         import snowflake.connector
-        con = snowflake.connector.connect(user=df['user'][0], password=df['password'][0], account=df['account'][0], warehouse=df['warehouse'][0], database=df['database'][0],)
+        con = snowflake.connector.connect(user=df['user'][0], password=df['password'][0], account=df['account'][0], warehouse=df['warehouse'][0], database=df['database'][0],port=df['port'][0],)
 #        
     elif conid.split('_')[0].lower() in ('clickhouse'):
         from clickhouse_driver import Client
