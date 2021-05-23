@@ -28,7 +28,7 @@ In order to use dconnect, use below steps
 1. Download [credentails.json](https://github.com/nit567esh/dconnect/blob/master/credentails.json) file.
 2. Configure the required connection using the credentails.json template.
 3. Store it somewhere in safe folder.
-4. Use below commands to run you dconnect
+4. Use below commands to run your dconnect
 ```sh
 >>> import dconnect as c
 >>> conids = c.conids('path_of_your_saved_credentails.json')
@@ -60,6 +60,7 @@ In order to use dconnect, use below steps
 **Note** - Same is applicalble for the following list of DBs: *SQLite, MySQL, SQL Server, Azure SQL, PostgreSQL, Redshift, Snowflake, Clickhouse, Oracle, IBM_Db, Vertica* 
 
 **2. For Others**
+
 Function **runsql** is only applicable to relational DBs/DWs. For other data source dconnect only allow to connect with data source and for query purpose you can ues the respective generic packages using the connection object initilized by dconnect.
 
 *Google Sheet Example*
