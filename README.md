@@ -24,7 +24,7 @@ or
 python3 -m pip install dconnect
 ```
 ### Usages
-In order to use the dcoonect, use below steps
+In order to use dconnect, use below steps
 1. Download [credentails.json](https://github.com/nit567esh/dconnect/blob/master/credentails.json) file.
 2. Configure the required connection using the credentails.json template.
 3. Store it somewhere in safe folder.
